@@ -25,7 +25,7 @@ class BarangController extends Controller
     {
         // menampilkan semua data dari model Siswa
         $barang = Barang::all();
-        return view('barang.index', compact('barang'));
+        return view('barang.index', compact('barang'),['title' => 'barang']);
     }
 
     /**
@@ -116,7 +116,7 @@ class BarangController extends Controller
         $barang->jumlah_barang = $request->jumlah_barang;
         $barang->total_harga = $request->harga_satuan * $request->jumlah_barang;
         $barang->save();
-        return redirect()->route('siswa.index')
+        return redirect()->route('barang.index')
             ->with('success', 'Data berhasil diedit!');
     }
 

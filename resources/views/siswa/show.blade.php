@@ -34,13 +34,13 @@
 
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Total Harga</label>
-                            <textarea class="form-control" name="total_harga" readonly>{{ $siswa->alamat }}</textarea>
+                            <label class="form-label">Alamat</label>
+                            <textarea class="form-control" name="alamat" readonly>{{ $siswa->alamat }}</textarea>
 
                         </div>
                         <div class="mb-3">
                             <div class="d-grid gap-2">
-                                <a href="{{ route('barang.index') }}" class="btn btn-primary" type="submit">Kembali</a>
+                                <a href="{{ route('siswa.index') }}" class="btn btn-primary" type="submit">Kembali</a>
                             </div>
                         </div>
                     </div>

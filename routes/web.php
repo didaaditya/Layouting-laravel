@@ -23,12 +23,14 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//route Siswa
-route::resource('siswa',SiswaController::class);
 
-//route Barang
-route::resource('barang',BarangController::class);
-
-route::get('test-template',function(){
-    return view('layouts.admin');
+//route untuk backend atau admin
+route::group(['prefix' =>'admin','minddleware'=>['auth']],function(){
+    route::get('/',function(){
+        return view('admin.index');
+});
+//route siswa    
+    route::resource('siswa',SiswaController::class);
+//route barang
+    route::resource('barang',BarangController::class);
 });
